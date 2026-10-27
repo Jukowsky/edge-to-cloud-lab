@@ -22,12 +22,12 @@ services:
     container_name: gateway
     command: python -m gateway.main
     environment:
-      OPCUA_URL: ${OPCUA_URL:-opc.tcp://plc-sim:4840/ludvika/}
+      OPCUA_URL: ${OPCUA_URL:-opc.tcp://plc-sim:4840/location1/}
       OPCUA_OBJECT: ${OPCUA_OBJECT:-ns=2;s=Transformer3}
       MQTT_HOST: ${MQTT_HOST:-mosquitto}
       MQTT_PORT: ${MQTT_PORT:-1883}
       MQTT_CLIENT_ID: ${MQTT_CLIENT_ID:-edge-gateway-1}
-      TOPIC_PREFIX: ${TOPIC_PREFIX:-site/ludvika/station1}
+      TOPIC_PREFIX: ${TOPIC_PREFIX:-site/location1/station1}
       BUFFER_PATH: /data/buffer.db
       BUFFER_MAX_MESSAGES: ${BUFFER_MAX_MESSAGES:-100000}
     volumes:

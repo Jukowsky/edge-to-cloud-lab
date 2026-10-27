@@ -4,7 +4,7 @@ import time
 import paho.mqtt.client as mqtt
 
 BROKER = "localhost"
-TOPIC = "site/ludvika/station1/transformer3/events"
+TOPIC = "site/location1/station1/transformer3/events"
 
 
 def archive_client():

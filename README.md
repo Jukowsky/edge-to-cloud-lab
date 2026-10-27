@@ -29,10 +29,10 @@ docker logs -f cloud-consumer
 ```
 
 ```
-[cloud] site/ludvika/station1/gateway/status             online  [retained]
-[cloud] site/ludvika/station1/gateway/opcua              connected  [retained]
-[cloud] site/ludvika/station1/transformer3/temperature      64.94  quality=Good  source_ts=2026-10-27T21:27:01.163814+00:00
-[cloud] site/ludvika/station1/transformer3/oil_level        82.79  quality=Good  source_ts=2026-10-27T21:27:01.164082+00:00
+[cloud] site/location1/station1/gateway/status             online  [retained]
+[cloud] site/location1/station1/gateway/opcua              connected  [retained]
+[cloud] site/location1/station1/transformer3/temperature      64.94  quality=Good  source_ts=2026-10-27T21:27:01.163814+00:00
+[cloud] site/location1/station1/transformer3/oil_level        82.79  quality=Good  source_ts=2026-10-27T21:27:01.164082+00:00
 ```
 
 ## Failure drills
@@ -72,12 +72,12 @@ Useful while doing them: `docker logs -f gateway`, `docker logs -f mosquitto`.
 ## Topics and payload
 
 ```
-site/ludvika/station1/transformer3/temperature
-site/ludvika/station1/transformer3/oil_level
-site/ludvika/station1/transformer3/tap_position
-site/ludvika/station1/transformer3/breaker_closed
-site/ludvika/station1/gateway/status      online | offline   (retained, Last Will)
-site/ludvika/station1/gateway/opcua       connected | disconnected   (retained)
+site/location1/station1/transformer3/temperature
+site/location1/station1/transformer3/oil_level
+site/location1/station1/transformer3/tap_position
+site/location1/station1/transformer3/breaker_closed
+site/location1/station1/gateway/status      online | offline   (retained, Last Will)
+site/location1/station1/gateway/opcua       connected | disconnected   (retained)
 ```
 
 ```json
@@ -88,12 +88,12 @@ site/ludvika/station1/gateway/opcua       connected | disconnected   (retained)
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `OPCUA_URL` | `opc.tcp://plc-sim:4840/ludvika/` | OPC UA endpoint of the device |
+| `OPCUA_URL` | `opc.tcp://plc-sim:4840/location1/` | OPC UA endpoint of the device |
 | `OPCUA_OBJECT` | `ns=2;s=Transformer3` | Object whose variables are forwarded |
 | `OPCUA_PUBLISHING_INTERVAL_MS` | `500` | Subscription publishing interval |
 | `MQTT_HOST` / `MQTT_PORT` | `mosquitto` / `1883` | Broker |
 | `MQTT_CLIENT_ID` | `edge-gateway-1` | Must be unique per gateway |
-| `TOPIC_PREFIX` | `site/ludvika/station1` | Root of all published topics |
+| `TOPIC_PREFIX` | `site/location1/station1` | Root of all published topics |
 | `BUFFER_MAX_MESSAGES` | `100000` | Disk buffer cap, oldest dropped first |
 
 ## Project layout

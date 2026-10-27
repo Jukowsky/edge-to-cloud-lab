@@ -8,8 +8,8 @@ import time
 
 from asyncua import Server, ua
 
-ENDPOINT = os.getenv("OPCUA_ENDPOINT", "opc.tcp://0.0.0.0:4840/ludvika/")
-NAMESPACE = "urn:ludvika:station1"
+ENDPOINT = os.getenv("OPCUA_ENDPOINT", "opc.tcp://0.0.0.0:4840/location1/")
+NAMESPACE = "urn:location1:station1"
 
 log = logging.getLogger("plc")
 

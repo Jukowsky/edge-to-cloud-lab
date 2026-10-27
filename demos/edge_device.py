@@ -4,8 +4,8 @@ import time
 import paho.mqtt.client as mqtt
 
 BROKER = "localhost"
-STATUS = "site/ludvika/station1/demo_device/status"
-TEMP = "site/ludvika/station1/transformer3/temperature"
+STATUS = "site/location1/station1/demo_device/status"
+TEMP = "site/location1/station1/transformer3/temperature"
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="demo-device")
 

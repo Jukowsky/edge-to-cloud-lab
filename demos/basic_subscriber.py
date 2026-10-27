@@ -1,8 +1,8 @@
-"""Lesson 1 - the 'cloud' side: connect to the broker and print every message under site/ludvika/."""
+"""Lesson 1 - the 'cloud' side: connect to the broker and print every message under site/location1/."""
 import paho.mqtt.client as mqtt
 
 BROKER = "localhost"
-TOPIC = "site/ludvika/#"  # '#' = everything below this level
+TOPIC = "site/location1/#"  # '#' = everything below this level
 
 
 def on_connect(client, userdata, flags, reason_code, properties):

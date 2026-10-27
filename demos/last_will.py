@@ -6,7 +6,7 @@ from pathlib import Path
 
 import paho.mqtt.client as mqtt
 
-STATUS = "site/ludvika/station1/demo_device/status"
+STATUS = "site/location1/station1/demo_device/status"
 
 monitor = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="cloud-monitor")
 monitor.on_message = lambda c, u, m: print(f"[monitor] {time.strftime('%X')} device status: {m.payload.decode().upper()}", flush=True)

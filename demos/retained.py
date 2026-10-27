@@ -4,8 +4,8 @@ import time
 import paho.mqtt.client as mqtt
 
 BROKER = "localhost"
-NORMAL = "site/ludvika/station1/transformer3/temperature"
-RETAINED = "site/ludvika/station1/transformer3/tap_position"
+NORMAL = "site/location1/station1/transformer3/temperature"
+RETAINED = "site/location1/station1/transformer3/tap_position"
 
 # 1) The device publishes two messages while NOBODY is subscribed.
 pub = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="demo-publisher")
@@ -23,7 +23,7 @@ print("[sub] a new subscriber connects 2 s later...")
 sub = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="late-dashboard")
 sub.on_message = lambda c, u, m: print(f"[sub] {m.topic} = {m.payload.decode()}  retain={m.retain}")
 sub.connect(BROKER, 1883)
-sub.subscribe("site/ludvika/#", qos=1)
+sub.subscribe("site/location1/#", qos=1)
 sub.loop_start()
 time.sleep(2)
 sub.disconnect()

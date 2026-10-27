@@ -6,7 +6,7 @@ import time
 import paho.mqtt.client as mqtt
 
 BROKER = "localhost"
-TOPIC = "site/ludvika/station1/transformer3/temperature"
+TOPIC = "site/location1/station1/transformer3/temperature"
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="demo-publisher")
 client.connect(BROKER, 1883)
