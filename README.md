@@ -1,6 +1,6 @@
 # Edge-to-Cloud Lab: OPC UA → MQTT gateway
 
-A small, runnable model of the data path behind an industrial digital twin: a simulated PLC
+A small, runnable model of an industrial edge-to-cloud data path: a simulated PLC
 exposes a power transformer over **OPC UA**, an **edge gateway** subscribes to it and forwards
 every change over **MQTT**, and a **cloud consumer** receives it. The gateway buffers to disk,
 so no data is lost while the broker or the uplink is down.
@@ -118,11 +118,3 @@ python -m gateway.main
 python cloud/consumer.py
 python -m pytest
 ```
-
-## Roadmap
-
-- TLS on MQTT (8883) with client certificates, and broker ACLs per topic
-- OPC UA `SignAndEncrypt` with certificate trust lists, instead of `NoSecurity`
-- Time-series storage and a dashboard (InfluxDB + Grafana)
-- A health endpoint and metrics (buffer depth, publish latency) for the gateway
-- An IEC 61850 (MMS) data source next to OPC UA
