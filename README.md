@@ -105,7 +105,6 @@ cloud/           MQTT consumer with a persistent session
 demos/           standalone MQTT lessons: retained messages, Last Will, QoS and persistent sessions
 mosquitto/       broker configuration
 tests/           unit tests for the buffer and payload mapping
-docs/            my learning notes (Turkish)
 ```
 
 ## Running locally without Docker
