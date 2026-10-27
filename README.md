@@ -6,7 +6,7 @@ every change over **MQTT**, and a **cloud consumer** receives it. The gateway bu
 so no data is lost while the broker or the uplink is down.
 
 I built it as a hands-on lab to learn OPC UA and MQTT and how an edge-to-cloud deployment
-fails and recovers. It is not production software (see [Roadmap](#roadmap)).
+fails and recovers. It is not production software: this is a lab setup with no TLS or authentication.
 
 ```mermaid
 flowchart LR

@@ -19,7 +19,7 @@ async def main():
     await server.init()
     server.set_endpoint(ENDPOINT)
     server.set_server_name("Station1 Simulated PLC")
-    server.set_security_policy([ua.SecurityPolicyType.NoSecurity])  # lab only, see README roadmap
+    server.set_security_policy([ua.SecurityPolicyType.NoSecurity])  # lab setup, no TLS or authentication
 
     # Vendor-specific nodes live in their own namespace (0 and 1 are reserved by the standard).
     ns = await server.register_namespace(NAMESPACE)
